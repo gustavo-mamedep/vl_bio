@@ -50,8 +50,12 @@
                     data-bs-toggle="collapse" data-bs-target="#endTocantins"
                     aria-expanded="false" aria-controls="endTocantins">
               <img src="{{ url_for('static', filename='img/tocantins.png') }}"
-                   alt="Loja Tocantins" class="store-thumb" loading="lazy">
-              Loja Tocantins - Endereço e Horários
+                   alt="Loja Tocantins"
+                   class="store-thumb js-modal-img"
+                   data-bs-toggle="modal"
+                   data-bs-target="#modalTocantins"
+                   loading="lazy">
+              Loja Tocantins<br>Endereço e Horários
             </button>
           </h2>
           <div id="endTocantins" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
@@ -74,7 +78,7 @@
                     aria-expanded="false" aria-controls="endTaiaman">
               <img src="{{ url_for('static', filename='img/taiaman.png') }}"
                    alt="Loja Taiaman" class="store-thumb" loading="lazy">
-              Loja Taiaman - Endereço e Horários
+              Loja Taiaman<br>Endereço e Horários
             </button>
           </h2>
           <div id="endTaiaman" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
@@ -97,7 +101,7 @@
                     aria-expanded="false" aria-controls="endLuizote">
               <img src="{{ url_for('static', filename='img/luizote.png') }}"
                    alt="Loja Luizote" class="store-thumb" loading="lazy">
-              Loja Luizote - Endereço e Horários
+              Loja Luizote<br>Endereço e Horários
             </button>
           </h2>
           <div id="endLuizote" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
@@ -118,4 +122,82 @@
     </div>
   </div>
 </div>
+
+<!-- ========== MODAIS DAS 3 LOJAS (ADICIONADOS) ========== -->
+
+<!-- Modal: Tocantins -->
+<div class="modal fade" id="modalTocantins" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white">Loja Tocantins</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img src="{{ url_for('static', filename='img/tocantins.png') }}"
+             alt="Loja Tocantins - Ampliada" class="modal-img w-100">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Taiaman -->
+<div class="modal fade" id="modalTaiaman" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white">Loja Taiaman</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img src="{{ url_for('static', filename='img/taiaman.png') }}"
+             alt="Loja Taiaman - Ampliada" class="modal-img w-100">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Luizote -->
+<div class="modal fade" id="modalLuizote" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white">Loja Luizote</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img src="{{ url_for('static', filename='img/luizote.png') }}"
+             alt="Loja Luizote - Ampliada" class="modal-img w-100">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script: impedir toggle do accordion no clique da imagem e abrir modais -->
+<script>
+  document.addEventListener('click', function (e) {
+    // Se clicou em uma miniatura de loja dentro do header do accordion
+    const img = e.target.closest('img.store-thumb');
+    if (!img) return;
+
+    // Evita que o accordion abra/feche ao clicar na imagem
+    e.stopPropagation();
+
+    // Decide qual modal abrir com base na imagem
+    const src = img.getAttribute('src') || '';
+    let modalId = null;
+
+    if (src.includes('tocantins'))        modalId = 'modalTocantins';
+    else if (src.includes('taiaman'))     modalId = 'modalTaiaman';
+    else if (src.includes('luizote'))     modalId = 'modalLuizote';
+
+    if (modalId) {
+      const modalEl = document.getElementById(modalId);
+      if (modalEl) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      }
+    }
+  }, true);
+</script>
 {% endblock %}
