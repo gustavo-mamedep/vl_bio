@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}VL | Links{% endblock %}
+
+{% block content %}
+<div class="container min-vh-100 d-flex align-items-start pt-4 pt-md-5">
+  <div class="row justify-content-center w-100">
+    <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+
+      <div class="text-center mb-3">
+        <img src="{{ url_for('static', filename='img/logo_vl.png') }}"
+             alt="Veste Livre" class="logo" decoding="async">
+      </div>
+
+      <h1 class="text-center text-vl h3 fw-bold mb-1">VESTE LIVRE</h1>
+      <p class="text-center mb-4 mt-2">
+        Looks completos, do casual ao sofisticado. Sua <strong>experiência</strong> de moda com elegância e confiança.
+      </p>
+
+      <!-- Botões WhatsApp -->
+      <div class="d-grid gap-3">
+        <a class="btn btn-vl"
+           href="https://wa.me/5534999719209?text=Ol%C3%A1!%20Tudo%20bem%3F%20Estou%20vindo%20do%20Instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
+           target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp"></i> Loja Tocantins
+        </a>
+        <a class="btn btn-vl"
+           href="https://wa.me/5534998314511?text=Ol%C3%A1!%20Tudo%20bem%3F%20Estou%20vindo%20do%20Instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
+           target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp"></i> Loja Taiaman
+        </a>
+        <a class="btn btn-vl"
+           href="https://wa.me/5534999554990?text=Ol%C3%A1!%20Tudo%20bem%3F%20Estou%20vindo%20do%20Instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
+           target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp"></i> Loja Luizote
+        </a>
+      </div>
+
+      <!-- Accordion -->
+      <div class="accordion mt-4 accordion-vl" id="accordionLojas">
+
+        <!-- Tocantins -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#endTocantins"
+                    aria-expanded="false" aria-controls="endTocantins">
+              <img src="{{ url_for('static', filename='img/tocantins.png') }}"
+                   alt="Loja Tocantins" class="store-thumb" loading="lazy">
+              Loja Tocantins - Endereço e Horários
+            </button>
+          </h2>
+          <div id="endTocantins" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
+            <div class="accordion-body">
+              Avenida Taylor Silva, 989<br>Bairro Tocantins - Uberlândia/MG<br>Seg à Sex: 9h - 18:50h<br>Sáb: 9h - 17h<br>
+              <a href="https://maps.app.goo.gl/SUXdBMndwZKjAdgn6"
+                 target="_blank" rel="noopener noreferrer"
+                 class="map-link">
+                 📍 Abrir no Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taiaman -->
+        <div class="accordion-item mt-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#endTaiaman"
+                    aria-expanded="false" aria-controls="endTaiaman">
+              <img src="{{ url_for('static', filename='img/taiaman.png') }}"
+                   alt="Loja Taiaman" class="store-thumb" loading="lazy">
+              Loja Taiaman - Endereço e Horários
+            </button>
+          </h2>
+          <div id="endTaiaman" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
+            <div class="accordion-body">
+              Rua dos Tárois, 190<br>Bairro Taiaman - Uberlândia/MG<br>Seg à Sex: 9h - 18:50h<br>Sáb: 9h - 17h<br>
+              <a href="https://maps.app.goo.gl/nt2m6Gqnhsyc6Ray7"
+                 target="_blank" rel="noopener noreferrer"
+                 class="map-link">
+                 📍 Abrir no Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luizote -->
+        <div class="accordion-item mt-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#endLuizote"
+                    aria-expanded="false" aria-controls="endLuizote">
+              <img src="{{ url_for('static', filename='img/luizote.png') }}"
+                   alt="Loja Luizote" class="store-thumb" loading="lazy">
+              Loja Luizote - Endereço e Horários
+            </button>
+          </h2>
+          <div id="endLuizote" class="accordion-collapse collapse" data-bs-parent="#accordionLojas">
+            <div class="accordion-body">
+              Avenida José Fonseca e Silva, 622<br>Bairro Luizote de Freitas - Uberlândia/MG<br>Seg à Sex: 9h - 18:50h<br>Sáb: 9h - 17h<br>
+              <a href="https://maps.app.goo.gl/NHedrXxRAVQLLYLL6"
+                 target="_blank" rel="noopener noreferrer"
+                 class="map-link">
+                 📍 Abrir no Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-secondary mt-4 mb-0">© 2025 Veste Livre</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

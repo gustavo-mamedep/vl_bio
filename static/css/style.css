@@ -1,0 +1,96 @@
+/* Base */
+body { background: #000; color: #fff; font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* Logo responsiva controlada */
+.logo{
+  max-width: 140px;   /* ajuste aqui se quiser maior/menor */
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: 12px;
+}
+
+/* Miniatura das lojas no accordion */
+.store-thumb {
+  width: 40px;            /* tamanho pequeno e consistente */
+  height: 40px;
+  object-fit: cover;      /* corta para caber no quadrado */
+  border-radius: 10px;    /* cantos arredondados */
+  margin-right: 20px;
+}
+
+
+.text-vl {
+  color: #b68542 !important;
+}
+
+
+.map-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #b68542;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.map-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+/* Botão dourado VL */
+.btn-vl{
+  background: linear-gradient(90deg, #b8860b, #d4af37);
+  color:#000;
+  border:none;
+  padding: 16px 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(212,175,55,0.25);
+}
+.btn-vl:hover{ filter: brightness(1.50); color:#000; }
+
+/* Accordion com tema escuro e mesma largura dos botões */
+.accordion-vl .accordion-item{
+  background:#111;
+  border:1px solid #333;
+  border-radius: 12px;
+  overflow:hidden;
+}
+.accordion-vl .accordion-button{
+  background:#111;
+  color:#fff;
+  box-shadow:none;
+}
+.accordion-vl .accordion-button:not(.collapsed){
+  color:#fff;
+  background:#151515;
+  border-bottom:1px solid #333;
+}
+.accordion-vl .accordion-body{
+  color:#bbb;
+}
+
+/* Deixa a seta do accordion branca */
+.accordion-button::after {
+  filter: invert(1);        /* inverte cor (preto → branco) */
+  opacity: 0.9;             /* opcional, deixa um branco suave */
+}
+
+/* Mantém a seta branca mesmo quando aberto */
+.accordion-button:not(.collapsed)::after {
+  filter: invert(1);
+  opacity: 1;
+}
+
+
+/* Espaçamento/centralização vertical em telas altas */
+@media (min-width: 768px){
+  .container.vh-100{ min-height: 100vh; }
+}
+
+/* Logo levemente maior em telas ≥576px */
+@media (min-width: 576px){
+  .logo{ max-width: 160px; }
+}
