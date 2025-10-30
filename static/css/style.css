@@ -132,3 +132,25 @@ body {
     max-width: 160px;
   }
 }
+
+/* Garante que o dropdown tenha a mesma largura dos outros botões */
+.dropdown .btn-vl {
+    width: 100%;
+    text-align: center; /* Centraliza o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    position: relative; /* Para posicionar a seta */
+}
+
+/* Posiciona a seta do dropdown à direita */
+.dropdown .btn-vl::after {
+    position: absolute;
+    right: 1rem; /* Ajuste conforme necessário */
+    margin-left: 0;
+}
+
+/* Garante que o menu dropdown tenha a mesma largura do botão */
+.dropdown-menu {
+    width: 100%;
+}
